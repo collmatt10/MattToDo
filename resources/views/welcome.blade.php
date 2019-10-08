@@ -93,6 +93,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="http://127.0.0.1:8000/todos">To Do</a>
                 </div>
             </div>
         </div>

@@ -12,11 +12,32 @@
 
     @include('inc.navbar')
 
+    @if(session('status')) {{-- <- If session key exists --}}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{session('status')}} {{-- <- Display the session value --}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+
     <main class="container mt-4">
         @yield('content')
     </main>
     @include('inc.footer')
-    <script src="{{asset('js/app.js')}}"></script> {{-- <- bootstrap js --}}
+    <script src="{{asset('js/app.js')}}"></script>
+    <script>
+        //close the alert after 3 seconds.
+        $(document).ready(function(){
+           setTimeout(function() {
+              $(".alert").alert('close');
+           }, 3000);
+        });
+    </script>
+    {{-- <- bootstrap js --}}
+
+
 
 </body>
 </html>
