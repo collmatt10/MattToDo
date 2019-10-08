@@ -7,6 +7,14 @@ use App\Todo;
 
 class TodoController extends Controller
 {
+
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = Todo::orderBy('created_at', 'desc')->paginate(0);
+        $todos = Todo::orderBy('created_at', 'desc')->paginate(8);
 
         return view('todos.index',[
           'todos' => $todos
