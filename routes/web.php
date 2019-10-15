@@ -27,3 +27,6 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('/home', 'HomeController@index')->name('home')->middleware();
+
+Route::get('/profile', 'ProfileController@index')->name('profile.index');
+Route::put('/profile', 'ProfileController@update')->name('profile.update');

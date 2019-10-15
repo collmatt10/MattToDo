@@ -38,8 +38,8 @@ class User extends Authenticatable //implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-public funtion todos(){
-  return $this->hasMany('Apps\ToDo','user_id');
+public function todos(){
+  return $this->hasMany('App\Todo','user_id');
 
 }
 
